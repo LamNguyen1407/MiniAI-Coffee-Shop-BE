@@ -51,7 +51,7 @@ export class OrderService {
   }
 
   async findOneByUserId(id: string) {
-    return await this.orderModel.find({userId: id});
+    return await this.orderModel.find({userId: id}).sort({createdAt: -1});
   }
 
   update(id: number, updateOrderDto: UpdateOrderDto) {
