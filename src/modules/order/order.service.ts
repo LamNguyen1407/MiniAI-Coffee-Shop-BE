@@ -50,8 +50,8 @@ export class OrderService {
     return `This action returns all order`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
+  async findOneByUserId(id: string) {
+    return await this.orderModel.find({userId: id});
   }
 
   update(id: number, updateOrderDto: UpdateOrderDto) {

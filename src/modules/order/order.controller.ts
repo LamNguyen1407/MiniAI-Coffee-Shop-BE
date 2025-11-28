@@ -22,9 +22,9 @@ export class OrderController {
     return this.orderService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.orderService.findOne(+id);
+  @Get('/user/:id')
+  async findOneByUserId(@Param('id') id: string) {
+    return await this.orderService.findOneByUserId(id);
   }
 
   @Patch(':id')
